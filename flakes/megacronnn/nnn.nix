@@ -31,5 +31,9 @@ pkgs.stdenv.mkDerivation {
     cp $bin $out/bin
     chmod +x $out/bin/*
   '';
+
+  postInstall = ''
+    cp $out/bin/nnn /usr/local/bin/
+  '';
 }
 
